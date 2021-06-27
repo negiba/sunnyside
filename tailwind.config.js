@@ -5,18 +5,13 @@ module.exports = {
     fill: {
       current: "currentColor",
     },
-    backgroundColor: {
+    backgroundColor: (theme) => ({
+      ...theme("colors"),
       grayish: "hsl(26, 100%, 99%)",
       darkblue: "hsl(198, 62%, 26%)",
       footer: "hsl(167, 44%, 70%)",
-    },
-    textColor: {
-      darkblue: "hsl(198, 62%, 26%)",
-      darkcyan: "hsl(167, 40%, 24%)",
-      darkgrayblue: "hsl(213, 9%, 39%)",
-      grayishblue: "hsl(210, 4%, 67%)",
-      footer: "hsl(168, 34%, 41%)",
-    },
+    }),
+
     borderColor: (theme) => ({
       ...theme("colors"),
       softred: "hsl(7, 99%, 70%)",
@@ -27,6 +22,15 @@ module.exports = {
       serif: ["Fraunces", "serif"],
     },
     extend: {
+      colors: {
+        lightblue: "hsl(200, 100%, 86%)",
+        darkblue: "hsl(198, 62%, 26%)",
+        darkcyan: "hsl(167, 40%, 24%)",
+        darkgrayblue: "hsl(213, 9%, 39%)",
+        grayishblue: "hsl(210, 4%, 67%)",
+        footer: "hsl(168, 34%, 41%)",
+        darkfooter: "hsl(168, 47%, 30%)",
+      },
       width: {
         72: "18rem",
         84: "21rem",

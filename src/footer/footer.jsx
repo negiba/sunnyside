@@ -1,8 +1,8 @@
 import { ReactComponent as LogoSvg } from "../assets/logo.svg";
-import { ReactComponent as FacebookIcon } from "../assets/icon-facebook.svg";
-import { ReactComponent as InstagramIcon } from "../assets/icon-instagram.svg";
-import { ReactComponent as TwitterIcon } from "../assets/icon-twitter.svg";
-import { ReactComponent as PinterestIcon } from "../assets/icon-pinterest.svg";
+import { FBIcon } from "../icons/fb-icon";
+import { InstagramIcon } from "../icons/instagram-icon";
+import { TwitterIcon } from "../icons/twitter-icon";
+import { PinterestIcon } from "../icons/pinterest-icon";
 
 export const Footer = () => {
   return (
@@ -11,15 +11,21 @@ export const Footer = () => {
         <LogoSvg fill="#287062" />
       </div>
       <div className="flex flex-row w-full h-12 gap-x-12 text-sm text-footer justify-center">
-        <p>About</p>
-        <p>Services</p>
-        <p>Projects</p>
+        <p className="hover:text-white cursor-pointer">About</p>
+        <p className="hover:text-white cursor-pointer">Services</p>
+        <p className="hover:text-white cursor-pointer">Projects</p>
       </div>
       <div className="flex flex-row w-full justify-center gap-x-4">
-        <FacebookIcon fill="#287062" />
-        <InstagramIcon fill="#287062" />
-        <TwitterIcon fill="#287062" />
-        <PinterestIcon fill="#287062" />
+        {/*<FacebookIcon*/}
+        {/*  fill="#287062"*/}
+        {/*  className="hover:cursor-pointer"*/}
+        {/*/>*/}
+        <FBIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
+        <InstagramIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
+        {/*<InstagramIcon fill="#287062" />*/}
+        {/*<TwitterIcon fill="#287062" />*/}
+        <TwitterIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
+        <PinterestIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
       </div>
     </div>
   );
