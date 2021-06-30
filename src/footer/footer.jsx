@@ -16,14 +16,8 @@ export const Footer = () => {
         <p className="hover:text-white cursor-pointer">Projects</p>
       </div>
       <div className="flex flex-row w-full justify-center gap-x-4">
-        {/*<FacebookIcon*/}
-        {/*  fill="#287062"*/}
-        {/*  className="hover:cursor-pointer"*/}
-        {/*/>*/}
         <FBIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
         <InstagramIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
-        {/*<InstagramIcon fill="#287062" />*/}
-        {/*<TwitterIcon fill="#287062" />*/}
         <TwitterIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
         <PinterestIcon className="w-6 h-6 cursor-pointer fill-current text-darkfooter hover:text-white" />
       </div>

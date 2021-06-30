@@ -1,5 +1,6 @@
 import "./App.css";
 import image1 from "./assets/image-header.jpg";
+import image1mob from "./assets/image-header-mob.jpg";
 import image2 from "./assets/image-transform.jpg";
 import image3 from "./assets/image-stand-out.jpg";
 import graphic from "./assets/image-graphic-design.jpg";
@@ -18,9 +19,23 @@ import { SectionArticle } from "./section-article/section-article";
 import { ImageWithArticle } from "./image-with-article/image-with-article";
 import { Testimonial } from "./testimonial/testimonial";
 import { FourImagesSection } from "./four-images-section/four-images-section";
-import {Footer} from "./footer/footer";
+import { Footer } from "./footer/footer";
+import { Arrow } from "./icons/arrow";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [width, setWidth] = useState(window.innerWidth);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  let isMobile = width <= 768;
   const articles = [
     {
       title: "Transform your brand",
@@ -64,8 +79,24 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <div className="w-full h-auto">
-          <img className="object-cover w-full h-screen" src={image1} alt="" />
+        <div className="flex w-full h-auto justify-center">
+          <img
+            className="object-cover w-full h-screen"
+            src={isMobile ? image1mob : image1}
+            alt=""
+          />
+          <p
+            className="absolute top-0 mt-48 md:mt-64 font-serif font-black text-5xl lg:text-7xl text-white tracking-wide md:tracking-widest text-center"
+            // style={{ letterSpacing: "1rem" }}
+          >
+            WE ARE CREATIVES
+          </p>
+          <div
+            className="absolute top-0"
+            style={{ marginTop: isMobile ? "24rem" : "28rem" }}
+          >
+            <Arrow className="w-10 font-serif font-black text-7xl text-white" />
+          </div>
         </div>
         <section className="grid grid-cols-2 grid-rows-3 place-items-center bg-grayish">
           <SectionArticle
