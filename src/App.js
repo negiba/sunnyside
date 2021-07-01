@@ -98,7 +98,7 @@ function App() {
             <Arrow className="w-10 font-serif font-black text-7xl text-white" />
           </div>
         </div>
-        <section className="grid grid-cols-2 grid-rows-3 place-items-center bg-grayish">
+        <section className="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-3 place-items-center bg-grayish">
           <SectionArticle
             title={articles[0].title}
             text={articles[0].text}
